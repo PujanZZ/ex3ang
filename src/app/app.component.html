@@ -1,0 +1,61 @@
+<div class="toolbar">
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Application</span>
+    <span class="example-spacer"></span>
+
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      routerLink="/"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="home"
+      ></mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+<br />
+<div class="ctn">
+  <br />
+  <div class="sideby">
+    <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav full" mode="side">
+        <div>
+          <div class="btns"></div>
+          <button
+            routerLink="/listview1"
+            (click)="showFiller = !showFiller"
+            mat-raised-button
+          >
+            ListView 1
+          </button>
+          <br />
+          <br />
+
+          <button
+            routerLink="/test"
+            (click)="showFiller = !showFiller"
+            mat-raised-button
+          >
+            ListView 2
+          </button>
+        </div>
+      </mat-drawer>
+    </mat-drawer-container>
+
+    <div class="rout">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

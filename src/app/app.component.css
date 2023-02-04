@@ -1,0 +1,52 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.example-container {
+  width: 250px;
+  height: 100vh;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.example-sidenav-content button {
+  background-color: lightcoral;
+}
+
+.example-sidenav {
+  flex-direction: column;
+  padding: 20px;
+  display: flex;
+}
+
+.full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.sideby {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.rout {
+  padding-left: 10px;
+}
+.btns {
+  margin-left: 50px;
+}
+.ctn {
+  width: 100%;
+  height: 100%;
+}
+.toolbar {
+  background-color: rgb(204, 204, 204);
+  height: 6vh;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,60 @@
+<br />
+<div>
+  <form [formGroup]="CarForm">
+    <label for="fname">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Car Name"
+      formControlName="name"
+    />
+
+    <label for="lname">Model</label>
+    <input
+      type="text"
+      id="model"
+      name="model"
+      placeholder="Model"
+      formControlName="model"
+    />
+    <label for="lname">Brand</label>
+    <input
+      type="text"
+      id="brand"
+      name="brand"
+      placeholder="Brand"
+      formControlName="brand"
+    />
+    <label for="lname">Color</label>
+    <input
+      type="text"
+      id="color"
+      name="color"
+      placeholder="Color"
+      formControlName="color"
+    />
+  </form>
+</div>
+<br />
+<button
+  mat-raised-button
+  color="warn"
+  *ngIf="carId != '0'"
+  (click)="onFormUpdate()"
+>
+  Update
+</button>
+<button (click)="onSave()" mat-raised-button color="warn" *ngIf="carId === '0'">
+  Save
+</button>
+
+<button
+  style="margin-left:16px"
+  mat-raised-button
+  color="Accent"
+  *ngIf="carId != '0'"
+  (click)="deleteFun()"
+>
+  Delete
+</button>
