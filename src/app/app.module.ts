@@ -25,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
 
 @NgModule({
   imports: [
@@ -44,6 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+    TableVirtualScrollModule,
+    ScrollingModule,
   ],
   declarations: [
     routingComponents,
