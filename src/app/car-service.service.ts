@@ -25,7 +25,7 @@ export class CarServiceService {
     const res = this.USERS.find((val) => val.id === id);
     return res;
   }
-  deleteFun(id: string) {
+  deleteFun(id: string): void {
     const res = this.USERS.findIndex((val) => val.id === id);
     this.USERS.splice(res, 1);
   }
