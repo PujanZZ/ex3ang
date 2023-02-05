@@ -30,14 +30,9 @@ export class CarServiceService {
     this.USERS.splice(res, 1);
   }
 
-  onUpdate(formGroup, values: Car) {
-    formGroup.patchValue({
-      id: values.id,
-      name: values.name,
-      model: values.model,
-      brand: values.brand,
-      color: values.color,
-    });
+  onUpdate(x: Car, id: string) {
+    const res = this.USERS.findIndex((val) => val.id === id);
+    this.USERS.splice(res, 1, x);
   }
 
   onSave(x: Car) {
