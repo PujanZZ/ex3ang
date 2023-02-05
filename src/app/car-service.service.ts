@@ -30,7 +30,7 @@ export class CarServiceService {
     this.USERS.splice(res, 1);
   }
 
-  onUpdate(x: Car, id: string) {}
+  onUpdate() {}
 
   onSave(x: Car) {
     this.USERS.push(x);
