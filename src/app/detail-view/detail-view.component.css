@@ -6,6 +6,6 @@
 }
 .form-row {
   display: flex;
-  width: 100vh;
+  width: 125vh;
   flex-direction: column;
 }
