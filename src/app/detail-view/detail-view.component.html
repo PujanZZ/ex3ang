@@ -1,41 +1,40 @@
-<br />
-<div>
-  <form [formGroup]="CarForm">
-    <label for="fname">Name</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      placeholder="Car Name"
-      formControlName="name"
-    />
+<h2>Form Field</h2>
+<form [formGroup]="CarForm">
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="CarForm.get('name').hasError('required')"
+        >Name is required</mat-error
+      >
+    </mat-form-field>
 
-    <label for="lname">Model</label>
-    <input
-      type="text"
-      id="model"
-      name="model"
-      placeholder="Model"
-      formControlName="model"
-    />
-    <label for="lname">Brand</label>
-    <input
-      type="text"
-      id="brand"
-      name="brand"
-      placeholder="Brand"
-      formControlName="brand"
-    />
-    <label for="lname">Color</label>
-    <input
-      type="text"
-      id="color"
-      name="color"
-      placeholder="Color"
-      formControlName="color"
-    />
-  </form>
-</div>
+    <mat-form-field>
+      <mat-label>Model</mat-label>
+      <input matInput formControlName="model" />
+      <mat-error *ngIf="CarForm.get('model').hasError('required')"
+        >Model is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Brand</mat-label>
+      <input matInput formControlName="brand" />
+      <mat-error *ngIf="CarForm.get('brand').hasError('required')"
+        >Brand is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Color</mat-label>
+      <input matInput formControlName="color" />
+      <mat-error *ngIf="CarForm.get('color').hasError('required')"
+        >Color is required</mat-error
+      >
+    </mat-form-field>
+  </div>
+</form>
+
 <br />
 <button
   mat-raised-button
