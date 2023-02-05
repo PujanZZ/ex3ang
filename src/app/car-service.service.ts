@@ -30,10 +30,7 @@ export class CarServiceService {
     this.USERS.splice(res, 1);
   }
 
-  onUpdate(x: Car, id: string) {
-    const res = this.USERS.findIndex((val) => val.id === id);
-    this.USERS.splice(res, 1, x);
-  }
+  onUpdate(x: Car, id: string) {}
 
   onSave(x: Car) {
     this.USERS.push(x);

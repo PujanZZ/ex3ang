@@ -44,7 +44,6 @@ export class DetailViewComponent {
 
   onFormUpdate(): void {
     let updateId = this.route.snapshot.paramMap.get('id');
-    this.CarServiceI.onUpdate(this.CarForm.value as Car, updateId);
   }
 
   ngOnInit() {
