@@ -109,7 +109,7 @@ export class DetailViewComponent {
     return (control: AbstractControl): Observable<ValidationErrors> => {
       return this.CarServiceI.checkIfUsernameExists(
         control.value,
-        this.id
+        this.carId
       ).pipe(
         map((result: boolean) =>
           result ? { usernameAlreadyExists: true } : null
