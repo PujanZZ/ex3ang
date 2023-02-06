@@ -42,7 +42,18 @@ export class CarServiceService {
     //console.log(this.USERS);
   }
 
+  // checkIfUsernameExists(value: string, id: string) {
+  //   return of(this.USERS.some((a) => a.id === value)).pipe(delay(1000));
+  // }
   checkIfUsernameExists(value: string, id: string) {
-    return of(this.USERS.some((a) => a.id === value)).pipe(delay(1000));
+    return of(
+      this.USERS.some((a) => {
+        if (id != a.id) {
+          return a.name === value;
+        } else {
+          return false;
+        }
+      })
+    ).pipe(delay(1000));
   }
 }

@@ -64,6 +64,7 @@ export class DetailViewComponent {
   onSave() {
     this.CarServiceI.onSave(this.CarForm.value as Car);
     //console.log(this.CarForm.value);
+    //console.log(this.CarForm);
   }
 
   onFormUpdate(): void {
