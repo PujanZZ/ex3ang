@@ -1,6 +1,7 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .example-container {
-  width: 250px;
+  width: 45vh;
   height: 100vh;
 }
 
@@ -51,4 +52,13 @@
 }
 .example-spacer {
   flex: 1 1 auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .example-container {
+    width: 100%;
+  }
+  .example-sidenav {
+    width: 100%;
+  }
 }

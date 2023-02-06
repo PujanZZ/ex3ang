@@ -19,7 +19,7 @@ export class CarServiceService {
       };
     }
 
-    Array.from({ length: 10 }).forEach(() => {
+    Array.from({ length: 50 }).forEach(() => {
       this.USERS.push(getCar());
     });
   }
