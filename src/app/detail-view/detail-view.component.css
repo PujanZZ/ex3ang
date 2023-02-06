@@ -1,6 +1,6 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-.formdiv {
+/* .formdiv {
   display: flex;
   flex-direction: column;
 }
@@ -8,4 +8,21 @@
   display: flex;
   width: 125vh;
   flex-direction: column;
+} */
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.form-row mat-form-field {
+  width: 125vh;
+}
+
+button {
+  width: 20%;
+  margin-top: 25px;
+  text-align: center;
 }

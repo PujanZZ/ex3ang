@@ -1,17 +1,59 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-table {
-  width: 160vh;
+/* table {
+  max-width: 25%;
 }
 
 .pbtn {
-  display: flex;
-  margin-left: 150vh;
+  margin-left: 100vh;
   flex-direction: column;
-  margin-top: -10vh;
 }
+
+@media only screen and (max-width: 757px) {
+  .pbtn {
+    margin-left: 0;
+    flex-direction: row;
+  }
+}
+
 .tdiv {
-  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .atagtable {
   color: rgb(0, 68, 255);
+} */
+
+.tdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pbtn {
+  margin-left: 20px;
+  display: flex;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.atagtable {
+  color: brown;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .tdiv {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .table {
+    width: 90%;
+  }
+
+  .pbtn {
+    margin-left: 0;
+  }
 }
