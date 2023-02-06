@@ -11,6 +11,9 @@
       <mat-error *ngIf="CarForm.get('name').hasError('maxlength')"
         >Max Characters is 100</mat-error
       >
+      <mat-error *ngIf="CarForm.get('name').hasError('uniqueName')"
+        >Car name should be unique</mat-error
+      >
     </mat-form-field>
 
     <mat-form-field>
@@ -56,27 +59,34 @@
       >
     </mat-form-field>
   </div>
+
+  <br />
+  <button
+    mat-raised-button
+    [disabled]="CarForm.invalid"
+    color="warn"
+    *ngIf="carId != '0'"
+    (click)="onFormUpdate()"
+  >
+    Update
+  </button>
+  <button
+    (click)="onSave()"
+    mat-raised-button
+    color="warn"
+    [disabled]="CarForm.invalid"
+    *ngIf="carId === '0'"
+  >
+    Save
+  </button>
+
+  <button
+    style="margin-left:16px"
+    mat-raised-button
+    color="Accent"
+    *ngIf="carId != '0'"
+    (click)="deleteFun()"
+  >
+    Delete
+  </button>
 </form>
-
-<br />
-<button
-  mat-raised-button
-  color="warn"
-  *ngIf="carId != '0'"
-  (click)="onFormUpdate()"
->
-  Update
-</button>
-<button (click)="onSave()" mat-raised-button color="warn" *ngIf="carId === '0'">
-  Save
-</button>
-
-<button
-  style="margin-left:16px"
-  mat-raised-button
-  color="Accent"
-  *ngIf="carId != '0'"
-  (click)="deleteFun()"
->
-  Delete
-</button>

@@ -61,6 +61,8 @@ export class DetailViewComponent {
   onFormUpdate(): void {
     let updateId = this.route.snapshot.paramMap.get('id');
     this.CarServiceI.onUpdate(updateId, this.CarForm.value as Car);
+    console.log(this.CarServiceI.USERS.map((x) => x.name));
+    console.log(this.CarForm);
   }
 
   ngOnInit() {
@@ -101,3 +103,17 @@ function yearMin(control: AbstractControl): { [key: string]: any } | null {
     return { yearMin: true };
   }
 }
+
+// function uniqueName(control: AbstractControl): { [key: string]: any } | null {
+//   const name = control.value;
+//   const nameMap = this.CarServiceI.USERS.map((x) => x.name);
+//   const unique = control.value.valid;
+
+//   if (name === nameMap) {
+//     return null;
+//   } else {
+//     return {
+//       uniqueName: true,
+//     };
+//   }
+// }
