@@ -95,7 +95,7 @@ export class DetailViewComponent {
 function yearMin(control: AbstractControl): { [key: string]: any } | null {
   const year = control.value;
 
-  if (year > 2000) {
+  if (year === '' || year > 2000) {
     return null;
   } else {
     return { yearMin: true };
