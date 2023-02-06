@@ -18,7 +18,7 @@ export class CarServiceService {
       };
     }
 
-    Array.from({ length: 5 }).forEach(() => {
+    Array.from({ length: 10 }).forEach(() => {
       this.USERS.push(getCar());
     });
   }
@@ -31,12 +31,12 @@ export class CarServiceService {
     this.USERS.splice(res, 1);
   }
 
-  onUpdate(id: string, x: Car) {
+  onUpdate(id: string, x: Car): void {
     const res = this.USERS.findIndex((val) => val.id === id);
     this.USERS.splice(res, 1, x);
   }
 
-  onSave(x: Car) {
+  onSave(x: Car): void {
     this.USERS.push(x);
     //console.log(this.USERS);
   }
