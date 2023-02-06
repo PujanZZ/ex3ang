@@ -40,12 +40,13 @@ export class DetailViewComponent {
   }
 
   onSave() {
-    this.CarServiceI.onSave(this.CarForm.value as unknown as Car);
+    this.CarServiceI.onSave(this.CarForm.value as Car);
     //console.log(this.CarForm.value);
   }
 
   onFormUpdate(): void {
     let updateId = this.route.snapshot.paramMap.get('id');
+    this.CarServiceI.onUpdate(updateId, this.CarForm.value as Car);
   }
 
   ngOnInit() {
