@@ -11,7 +11,7 @@
       <mat-error *ngIf="CarForm.get('name').hasError('maxlength')"
         >Max Characters is 100</mat-error
       >
-      <mat-error *ngIf="CarForm.get('name').hasError('uniqueName')"
+      <mat-error *ngIf="CarForm.get('name').hasError('usernameAlreadyExists')"
         >Car name should be unique</mat-error
       >
     </mat-form-field>

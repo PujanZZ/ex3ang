@@ -4,10 +4,12 @@ import {
   AsyncValidatorFn,
   FormControl,
   FormGroup,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faker } from '@faker-js/faker';
+import { map, Observable } from 'rxjs';
 import { Car } from '../Car';
 import { CarServiceService } from '../car-service.service';
 
@@ -19,7 +21,11 @@ import { CarServiceService } from '../car-service.service';
 export class DetailViewComponent {
   CarForm = new FormGroup({
     id: new FormControl(''),
-    name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+    name: new FormControl(
+      '',
+      [Validators.required, Validators.maxLength(100)],
+      [this.createValidator()]
+    ),
     model: new FormControl('', [
       Validators.required,
       Validators.maxLength(100),
@@ -34,6 +40,7 @@ export class DetailViewComponent {
     ]),
     yearOfRelease: new FormControl('', [Validators.required, yearMin]),
   });
+  public id = '';
   public carId: any;
   public saveId: any = [];
   constructor(
@@ -97,9 +104,12 @@ export class DetailViewComponent {
     }
   }
 
-  createValidator(CarService: CarServiceI): AsyncValidatorFn {
+  createValidator(): AsyncValidatorFn {
     return (control: AbstractControl): Observable<ValidationErrors> => {
-      return CarService.checkIfUsernameExists(control.value).pipe(
+      return this.CarServiceI.checkIfUsernameExists(
+        control.value,
+        this.id
+      ).pipe(
         map((result: boolean) =>
           result ? { usernameAlreadyExists: true } : null
         )
