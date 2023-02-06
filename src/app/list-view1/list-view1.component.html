@@ -10,7 +10,7 @@
 
   <div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container style="background-color: black" matColumnDef="name">
+      <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let element">
           <a

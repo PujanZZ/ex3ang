@@ -77,6 +77,7 @@
     color="warn"
     [disabled]="CarForm.invalid"
     *ngIf="carId === '0'"
+    routeLink="/listview1"
   >
     Save
   </button>
@@ -85,6 +86,8 @@
     style="margin-left:16px"
     mat-raised-button
     color="Accent"
+    routeLink="/listview1"
+    type="button"
     *ngIf="carId != '0'"
     (click)="deleteFun()"
   >

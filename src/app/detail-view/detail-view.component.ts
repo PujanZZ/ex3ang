@@ -51,20 +51,14 @@ export class DetailViewComponent {
 
   deleteFun(): void {
     this.CarServiceI.deleteFun(this.CarForm.get('id').value);
-    this.CarForm.setValue({
-      id: '',
-      name: '',
-      model: '',
-      brand: '',
-      color: '',
-      yearOfRelease: '',
-    });
+    this.router.navigate(['listview1']);
   }
 
   onSave() {
     this.CarServiceI.onSave(this.CarForm.value as Car);
     //console.log(this.CarForm.value);
     //console.log(this.CarForm);
+    this.router.navigate(['listview1']);
   }
 
   onFormUpdate(): void {
@@ -73,8 +67,7 @@ export class DetailViewComponent {
     console.log(this.CarServiceI.USERS.map((x) => x.name));
     console.log(this.CarForm);
 
-    let nameInput = this.CarForm.get('name').value;
-    this.CarServiceI.checkIfUsernameExists(nameInput, updateId);
+    this.router.navigate(['listview1']);
   }
 
   ngOnInit() {
