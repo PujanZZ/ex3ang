@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faker } from '@faker-js/faker';
 import { Car } from '../Car';
@@ -26,7 +31,7 @@ export class DetailViewComponent {
       Validators.required,
       Validators.maxLength(100),
     ]),
-    yearOfRelease: new FormControl('', [Validators.required]),
+    yearOfRelease: new FormControl('', [Validators.required, yearMin]),
   });
   public carId: any;
   public saveId: any = [];
@@ -84,5 +89,15 @@ export class DetailViewComponent {
         yearOfRelease: '',
       });
     }
+  }
+}
+
+function yearMin(control: AbstractControl): { [key: string]: any } | null {
+  const year = control.value;
+
+  if (year > 2000) {
+    return null;
+  } else {
+    return { yearMin: true };
   }
 }

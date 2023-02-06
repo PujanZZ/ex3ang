@@ -19,7 +19,7 @@
       <mat-error *ngIf="CarForm.get('model').hasError('required')"
         >Model is required</mat-error
       >
-      <mat-error *ngIf="CarForm.get('name').hasError('maxlength')"
+      <mat-error *ngIf="CarForm.get('model').hasError('maxlength')"
         >Max Characters is 100</mat-error
       >
     </mat-form-field>
@@ -30,7 +30,7 @@
       <mat-error *ngIf="CarForm.get('brand').hasError('required')"
         >Brand is required</mat-error
       >
-      <mat-error *ngIf="CarForm.get('name').hasError('maxlength')"
+      <mat-error *ngIf="CarForm.get('brand').hasError('maxlength')"
         >Max Characters is 100</mat-error
       >
     </mat-form-field>
@@ -41,7 +41,7 @@
       <mat-error *ngIf="CarForm.get('color').hasError('required')"
         >Color is required</mat-error
       >
-      <mat-error *ngIf="CarForm.get('name').hasError('maxlength')"
+      <mat-error *ngIf="CarForm.get('color').hasError('maxlength')"
         >Max Characters is 100</mat-error
       >
     </mat-form-field>
@@ -51,8 +51,8 @@
       <mat-error *ngIf="CarForm.get('yearOfRelease').hasError('required')"
         >yearOfRelease is required</mat-error
       >
-      <mat-error *ngIf="CarForm.get('name').hasError('maxlength')"
-        >Max Characters is 100</mat-error
+      <mat-error *ngIf="CarForm.get('yearOfRelease').hasError('yearMin')"
+        >Year of Release must be greater than 2000</mat-error
       >
     </mat-form-field>
   </div>
