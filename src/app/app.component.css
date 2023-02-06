@@ -37,7 +37,9 @@
   padding-left: 10px;
 }
 .btns {
-  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .ctn {
   width: 100%;

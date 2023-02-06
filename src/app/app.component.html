@@ -32,24 +32,25 @@
     <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav full" mode="side">
         <div>
-          <div class="btns"></div>
-          <button
-            routerLink="/listview1"
-            (click)="showFiller = !showFiller"
-            mat-raised-button
-          >
-            ListView 1
-          </button>
-          <br />
-          <br />
+          <div class="btns">
+            <button
+              routerLink="/listview1"
+              (click)="showFiller = !showFiller"
+              mat-raised-button
+            >
+              ListView 1
+            </button>
+            <br />
+            <br />
 
-          <button
-            routerLink="/test"
-            (click)="showFiller = !showFiller"
-            mat-raised-button
-          >
-            ListView 2
-          </button>
+            <button
+              routerLink="/test"
+              (click)="showFiller = !showFiller"
+              mat-raised-button
+            >
+              ListView 2
+            </button>
+          </div>
         </div>
       </mat-drawer>
     </mat-drawer-container>

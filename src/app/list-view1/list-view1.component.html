@@ -9,12 +9,15 @@
   </div>
   <br />
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="name">
+    <ng-container style="background-color: black" matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let element">
-        <a style="cursor: pointer" (click)="onRetrive(element)">{{
-          element.name
-        }}</a>
+        <a
+          class="atagtable"
+          style="cursor: pointer"
+          (click)="onRetrive(element)"
+          >{{ element.name }}</a
+        >
       </td>
     </ng-container>
 

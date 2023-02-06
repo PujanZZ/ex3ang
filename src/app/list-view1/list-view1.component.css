@@ -7,7 +7,11 @@ table {
   display: flex;
   margin-left: 150vh;
   flex-direction: column;
+  margin-top: -10vh;
 }
 .tdiv {
   max-width: 100%;
+}
+.atagtable {
+  color: rgb(0, 68, 255);
 }
