@@ -38,7 +38,7 @@ export class DetailViewComponent {
       Validators.required,
       Validators.maxLength(100),
     ]),
-    yearOfRelease: new FormControl('', [Validators.required, yearMin]),
+    yearOfRelease: new FormControl('', [Validators.required, yearMin, yearMax]),
   });
   public id = '';
   public carId: any;
@@ -119,5 +119,15 @@ function yearMin(control: AbstractControl): { [key: string]: any } | null {
     return null;
   } else {
     return { yearMin: true };
+  }
+}
+
+function yearMax(control: AbstractControl): { [key: string]: any } | null {
+  const year = control.value;
+
+  if (year === '' || year < 2100) {
+    return null;
+  } else {
+    return { yearMax: true };
   }
 }

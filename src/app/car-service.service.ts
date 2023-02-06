@@ -54,6 +54,6 @@ export class CarServiceService {
           return false;
         }
       })
-    ).pipe(delay(1000));
+    );
   }
 }

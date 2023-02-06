@@ -57,6 +57,9 @@
       <mat-error *ngIf="CarForm.get('yearOfRelease').hasError('yearMin')"
         >Year of Release must be greater than 2000</mat-error
       >
+      <mat-error *ngIf="CarForm.get('yearOfRelease').hasError('yearMax')"
+        >Year of Release should not exceed 2100</mat-error
+      >
     </mat-form-field>
   </div>
 
@@ -78,6 +81,7 @@
     [disabled]="CarForm.invalid"
     *ngIf="carId === '0'"
     routeLink="/listview1"
+    button="submit"
   >
     Save
   </button>
