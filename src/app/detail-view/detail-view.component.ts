@@ -13,10 +13,19 @@ import { CarServiceService } from '../car-service.service';
 export class DetailViewComponent {
   CarForm = new FormGroup({
     id: new FormControl(''),
-    name: new FormControl('', [Validators.required]),
-    model: new FormControl('', [Validators.required]),
-    brand: new FormControl('', [Validators.required]),
-    color: new FormControl('', [Validators.required]),
+    name: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+    model: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(100),
+    ]),
+    brand: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(100),
+    ]),
+    color: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(100),
+    ]),
     yearOfRelease: new FormControl('', [Validators.required]),
   });
   public carId: any;
