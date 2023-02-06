@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { faker } from '@faker-js/faker';
+import { of, delay } from 'rxjs';
 import { Car } from './Car';
 
 @Injectable()
@@ -39,5 +40,15 @@ export class CarServiceService {
   onSave(x: Car): void {
     this.USERS.push(x);
     //console.log(this.USERS);
+  }
+
+  checkIfUsernameExists(val: string, id: string) {
+    return of(
+      this.USERS.some((a) => {
+        if (id != a.id) {
+          console.log(a.name === val);
+        }
+      })
+    ).pipe(delay(1000));
   }
 }
