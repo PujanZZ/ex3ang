@@ -33,6 +33,13 @@
         >Color is required</mat-error
       >
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Year Of Release</mat-label>
+      <input matInput formControlName="yearOfRelease" />
+      <mat-error *ngIf="CarForm.get('yearOfRelease').hasError('required')"
+        >yearOfRelease is required</mat-error
+      >
+    </mat-form-field>
   </div>
 </form>
 

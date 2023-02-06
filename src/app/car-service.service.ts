@@ -14,6 +14,7 @@ export class CarServiceService {
         model: faker.vehicle.model(),
         brand: faker.vehicle.manufacturer(),
         color: faker.vehicle.color(),
+        yearOfRelease: faker.datatype.number({ min: 2000, max: 2050 }),
       };
     }
 
@@ -30,7 +31,10 @@ export class CarServiceService {
     this.USERS.splice(res, 1);
   }
 
-  onUpdate() {}
+  onUpdate(id: string, x: Car) {
+    const res = this.USERS.findIndex((val) => val.id === id);
+    this.USERS.splice(res, 1, x);
+  }
 
   onSave(x: Car) {
     this.USERS.push(x);

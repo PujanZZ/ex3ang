@@ -17,6 +17,7 @@ export class DetailViewComponent {
     model: new FormControl('', [Validators.required]),
     brand: new FormControl('', [Validators.required]),
     color: new FormControl('', [Validators.required]),
+    yearOfRelease: new FormControl('', [Validators.required]),
   });
   public carId: any;
   public saveId: any = [];
@@ -34,11 +35,12 @@ export class DetailViewComponent {
       model: '',
       brand: '',
       color: '',
+      yearOfRelease: '',
     });
   }
 
   onSave() {
-    this.CarServiceI.onSave(this.CarForm.value as Car);
+    this.CarServiceI.onSave(this.CarForm.value as unknown as Car);
     //console.log(this.CarForm.value);
   }
 
@@ -60,6 +62,7 @@ export class DetailViewComponent {
         model: car.model,
         brand: car.brand,
         color: car.color,
+        yearOfRelease: car.yearOfRelease,
       });
     } else {
       this.CarForm.setValue({
@@ -68,6 +71,7 @@ export class DetailViewComponent {
         model: '',
         brand: '',
         color: '',
+        yearOfRelease: '',
       });
     }
   }

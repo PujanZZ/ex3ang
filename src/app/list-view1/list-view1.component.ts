@@ -9,7 +9,13 @@ import { CarServiceService } from '../car-service.service';
   styleUrls: ['./list-view1.component.css'],
 })
 export class ListView1Component implements OnInit {
-  displayedColumns: string[] = ['name', 'model', 'brand', 'color'];
+  displayedColumns: string[] = [
+    'name',
+    'model',
+    'brand',
+    'color',
+    'yearOfRelease',
+  ];
   dataSource = this._ps.USERS;
   car: Car[] = [];
   constructor(private _ps: CarServiceService, private router: Router) {}
