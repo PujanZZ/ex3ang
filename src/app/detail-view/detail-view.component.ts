@@ -96,6 +96,16 @@ export class DetailViewComponent {
       });
     }
   }
+
+  createValidator(CarService: CarServiceI): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors> => {
+      return CarService.checkIfUsernameExists(control.value).pipe(
+        map((result: boolean) =>
+          result ? { usernameAlreadyExists: true } : null
+        )
+      );
+    };
+  }
 }
 
 function yearMin(control: AbstractControl): { [key: string]: any } | null {
