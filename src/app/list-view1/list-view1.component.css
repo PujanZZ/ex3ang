@@ -29,10 +29,9 @@ table td {
   .tdiv {
     flex-direction: column;
     align-items: flex-start;
-    width: 79vh;
+    width: vh;
   }
-  .table {
-  }
+
 
   .pbtn {
     margin-left: 0;
