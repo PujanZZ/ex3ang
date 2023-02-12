@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Car } from '../Car';
 import { CarServiceService } from '../car-service.service';
+import { TableVirtualScrollDataSource } from 'ng-table-virtual-scroll';
 
 @Component({
   selector: 'app-list-view1',
@@ -16,7 +17,8 @@ export class ListView1Component implements OnInit {
     'color',
     'yearOfRelease',
   ];
-  dataSource = this._ps.USERS;
+
+  dataSource = new TableVirtualScrollDataSource(this._ps.USERS);
   car: Car[] = [];
   constructor(private _ps: CarServiceService, private router: Router) {}
 
